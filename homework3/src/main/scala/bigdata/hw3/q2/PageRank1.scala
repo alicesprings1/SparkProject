@@ -1,4 +1,4 @@
-package bigdata.hw3
+package bigdata.hw3.q2
 
 import org.apache.spark.{SparkConf, SparkContext}
 
