@@ -3,7 +3,7 @@ package bigdata.hw4
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions.{col, explode, split, window}
 import org.apache.spark.sql.streaming.Trigger
-
+//Structured spark streaming
 object KConsumerStructured {
   def main(args: Array[String]): Unit = {
     val spark=SparkSession
