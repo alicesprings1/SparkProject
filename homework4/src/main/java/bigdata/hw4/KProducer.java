@@ -29,12 +29,16 @@ public class KProducer {
         producer.send(record);
         while ((line2= br.readLine())!=null){
             String[] words=line2.split(",");
-            time2=dateFormat.parse(words[words.length-1]).getTime();
-            gap=(int) (time2-time1);
-            record=new ProducerRecord<>("1155164941-hw4",line2);
-            Thread.currentThread().sleep(gap);
-            producer.send(record);
-            time1=time2;
+            try{
+                time2=dateFormat.parse(words[words.length-1]).getTime();
+                gap=(int) (time2-time1);
+                record=new ProducerRecord<>("1155164941-hw4",line2);
+                Thread.currentThread().sleep(gap);
+                producer.send(record);
+                time1=time2;
+            }catch (ParseException e){
+                e.printStackTrace();
+            }
         }
     }
 }
